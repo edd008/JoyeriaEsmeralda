@@ -1,0 +1,330 @@
+/* Estilos Generales para anillos.html */
+body {
+    background-color: white;
+    color: #4383c4;
+}
+
+
+
+
+/* CSS for header */
+header {
+    position: relative; /* Necesario para el overlay */
+    background-image: url('../assets/images/Cabecera-post-como-aprender-joyeria.jpg');
+    background-size: cover; /* Ajusta la imagen para cubrir todo el área del header */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No repite la imagen */
+    color: white; /* Asegura que el texto sea legible */
+    padding: 20px 0; /* Añade padding para espacio alrededor del contenido */
+    height: 200px; /* Ajusta la altura del header */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: space-between; /* Espaciado entre los elementos del header */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay oscuro */
+    z-index: 1; /* Asegura que el overlay esté sobre la imagen pero debajo del contenido */
+}
+
+
+
+
+
+/* Estilo para el contenido dentro del header */
+header > * {
+    position: relative; /* Asegura que el contenido esté sobre el overlay */
+    z-index: 2;
+}
+
+/* Estilo para el logo */
+.logo {
+    height: 100px; /* Ajusta la altura del logo */
+    margin-left: 20px; /* Espacio entre el logo y el borde del header */
+}
+
+/* Estilo para la barra de navegación */
+.navbar-nav {
+    margin-right: 20px; /* Espacio entre la barra de navegación y el borde del header */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white; /* Color del texto de los enlaces */
+    font-size: 18px; /* Tamaño de fuente de los enlaces */
+    padding: 10px; /* Espacio alrededor de los enlaces */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffcc00; /* Color de los enlaces al pasar el mouse */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+
+
+
+
+/* General header styling */
+header {
+    background-color: #f8f9fa;
+    padding: 0.5rem 1rem;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand .logo {
+    max-height: 50px; /* Ajusta el tamaño del logo según sea necesario */
+    transition: transform 0.3s ease;
+}
+
+/* Navbar toggler */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"%3E%3Cpath stroke="%23333" stroke-width="2" d="M5 7h20M5 15h20M5 23h20" /%3E%3C/svg%3E');
+}
+
+/* Navbar collapse */
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 1rem;
+}
+
+.nav-link {
+    color: #333333;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Dropdown styling */
+.nav-item.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f8f9fa;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    color: #333333;
+    transition: color 0.3s, transform 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+    transform: scale(1.1); /* Efecto de agrandamiento */
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Responsive styling */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand .logo {
+        max-height: 40px;
+    }
+}
+
+
+body {
+    /*background-color: #09270f; /* Color de fondo claro */
+    background-image: url('../assets/images/Cabecera-post-como-aprender-joyeria.jpg'); /* Ruta a tu imagen de fondo */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color:black; /* Color del texto */
+    font-size:larger;
+   /* Para asegurarte de que una imagen de fondo se vea bien en el body 
+   de una página web sin que se seccione o se pixele,  */
+
+   
+    background-size: cover; /* Escala la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen en la página */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen se mantenga fija mientras se desplaza la página */
+    background-color: #f8f9fa; /* Color de fondo de respaldo en caso de que la imagen no se cargue */
+
+
+}
+
+
+
+
+
+
+
+/* Dropdown de Galería en la Barra de Navegación y colores al pasar el puntero sobre la galeria */
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Ajusta el margen superior si es necesario */
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: #1e477177;
+}
+
+.navbar-nav .dropdown-item {
+    color: white;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #1f201f;
+}
+
+
+
+
+/* estilos generales para los contenedores de las imagenes*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section headers */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Card styling */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive grid styling */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+}
+
+.col-md-4 {
+    flex: 1 1 33.333%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 1 1 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-4 {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* <!-- Social Media Bar --> */
+.social-media-bar {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los íconos */
+    align-items: center; /* Centra verticalmente los íconos */
+    padding: 10px;
+    background-color: #333; /* Color de fondo de la barra */
+    font-size: 24px;
+}
+
+.social-icon {
+    width: 40px; /* Ajusta el tamaño de los íconos */
+    height: 40px;
+    margin: 0 10px; /* Espacio entre los íconos */
+    transition: transform 0.3s; /* Animación para el hover */
+}
+
+.social-icon:hover {
+    transform: scale(2.1); /* Efecto de agrandamiento al pasar el mouse */
+}
+

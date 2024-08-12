@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeria Esmeralda Anillos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/anillos.css"> <!-- Ruta correcta al CSS -->
+
+    <!-- incluir Vue.js en tu proyecto. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+   
+    <!-- Incluye Vue.js desde CDN -->
+  
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/LogoJoyeriaEsmeralda.webp" alt="Logo de Joyería XYZ" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galería</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="anillos.html">Anillos</a>
+                            <a class="dropdown-item" href="aretes.html">Aretes</a>
+                            <a class="dropdown-item" href="cadenas.html">Cadenas</a>
+                            <a class="dropdown-item" href="pulseras.html">Pulseras</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Acerca de</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Anillos Section -->
+       <!-- El script de Vue debe estar dentro de un <div> con el id="app", que envuelva toda la parte del contenido dinámico,
+             para que Vue.js pueda gestionar adecuadamente los elementos del DOM. -->
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <main class="container my-5">
+        <div id="app">
+            <section>
+                <h2>Anillos</h2>
+                <p>Ofrecemos una amplia gama de servicios de joyería, que incluyen diseños personalizados, reparaciones y más. Visite nuestra página de Servicios para obtener más información.</p>
+            </section>
+
+            <section>
+                <h2>Featured Products</h2>
+                
+                <!-- Filtrar y Ordenar -->
+                <div>
+                    <label for="filter">Filtrar por nombre:</label>
+                    <input type="text" v-model="filterText" placeholder="Buscar productos...">
+                </div>
+                <div>
+                    <label for="filterPrice">Filtrar por precio máximo:</label>
+                    <input type="number" v-model="filterPrice" placeholder="Ingrese precio máximo...">
+                </div>
+                <div>
+                    <label for="sort">Ordenar por:</label>
+                    <select v-model="sortKey">
+                        <option value="name">Nombre</option>
+                        <option value="price">Precio</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4" v-for="product in filteredAndSortedProducts" :key="product.id">
+                        <div class="card">
+                            <img :src="product.image" class="card-img-top" :alt="product.name">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text">{{ product.description }}<br>
+                                    ORO BLANCO ₡{{ product.priceWhiteGold | currency }}<br>
+                                    ORO AMARILLO ₡{{ product.priceYellowGold | currency }}<br>
+                                    ORO ROSA ₡{{ product.priceRoseGold | currency }}<br>
+                                    PLATA ₡{{ product.priceSilver | currency }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                filterText: '',
+                filterPrice: '', // Nueva propiedad para filtrar por precio
+                sortKey: 'name',
+                products: [
+                    {
+                        id: 1,
+                        name: 'Matrimonio',
+                        description: 'Anillo de Matrimonio',
+                        priceWhiteGold: 345000,
+                        priceYellowGold: 300000,
+                        priceRoseGold: 320000,
+                        priceSilver: 60000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.33.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    {
+                        id: 2,
+                        name: 'Product 2',
+                        description: 'Descripción del Producto 2',
+                        priceWhiteGold: 525000,
+                        priceYellowGold: 480000,
+                        priceRoseGold: 515000,
+                        priceSilver: 80000,
+                        image: 'assets/images/WhatsApp Image 2023-06-04 at 19.44.35.jpeg'
+                    },
+                    // Agrega más productos aquí...
+                ]
+            },
+            computed: {
+                filteredAndSortedProducts() {
+                    let filterText = this.filterText.toLowerCase();
+                    let filterPrice = parseFloat(this.filterPrice);
+        
+                    let filtered = this.products.filter(product => {
+                        // Convertir precios a número para comparar
+                        let priceWhiteGold = product.priceWhiteGold;
+                        let priceYellowGold = product.priceYellowGold;
+                        let priceRoseGold = product.priceRoseGold;
+                        let priceSilver = product.priceSilver;
+        
+                        // Filtrar por nombre y por precio si se proporciona un filtro de precio válido
+                        let byName = product.name.toLowerCase().includes(filterText);
+                        let byPrice = isNaN(filterPrice) || (
+                            priceWhiteGold <= filterPrice || 
+                            priceYellowGold <= filterPrice || 
+                            priceRoseGold <= filterPrice || 
+                            priceSilver <= filterPrice
+                        );
+        
+                        return byName && byPrice;
+                    });
+        
+                    let sorted = filtered.sort((a, b) => {
+                        if (this.sortKey === 'price') {
+                            return a.priceWhiteGold - b.priceWhiteGold; // Ordenar por el precio de Oro Blanco
+                        } else if (this.sortKey === 'name') {
+                            return a.name.localeCompare(b.name);
+                        }
+                    });
+        
+                    return sorted;
+                }
+            },
+            filters: {
+                currency(value) {
+                    return parseFloat(value).toLocaleString('es-CR'); // Formato de moneda en colones costarricenses
+                }
+            }
+        });
+    </script>
+        
+    
+    
+          <!-- Social Media Bar -->
+<div class="social-media-bar">
+    <p>También nos puedes contactar por correo a <a href="mailto:contacto@efectos.co.cr">elisanchez8127@gmail.com</a> o en todas nuestras redes sociales:</p>
+    <a href="https://www.facebook.com" target="_blank"><img src="assets/images/logoFacebook.png" alt="Facebook" class="social-icon"></a>
+    <a href="https://www.instagram.com" target="_blank"><img src="assets/images/logoInstagram.avif" alt="Instagram" class="social-icon"></a>
+    <a href="https://api.whatsapp.com/send/?phone=50660105000&text&type=phone_number&app_absent=0" target="_blank"><img src="assets/images/LogoWhatsapp.jpg" alt="WhatsApp" class="social-icon"></a>
+</div>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2024 Joyeria Esmaralda. All rights reserved.</p>
+            
+        </div>
+    </footer>
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    
+    <!-- <script src="js/Scripts.js"></script> -->
+<!-- Incluye Vue.js desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</body>
+</html>
+
