@@ -3,13 +3,13 @@
     {
         "titulo": "Matrimonio",
         "descripcion": "Oro blanco.",
-        "imagen": "images/grabadoJoyas.jpg",
+        "imagen": "assets/images/grabadoJoyas.jpg",
         "imagenHover": "images/WhatsApp Image 2023-06-04 at 19.44.30.jpeg"
     },
     {
         "titulo": "Anillo de compromiso",
         "descripcion": "Diamante y oro blanco.",
-        "imagen": "images/WhatsApp Image 2023-06-04 at 19.44.33.jpeg",
+        "imagen": "assets/images/WhatsApp Image 2023-06-04 at 19.44.33.jpeg",
         "imagenHover": "images/WhatsApp Image 2023-06-04 at 19.44.48 (1).jpeg"
     },
     {
