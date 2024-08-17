@@ -324,3 +324,66 @@ header {
 #services-page-header .navbar .nav-link:hover {
     color: #3498db; /* Color al pasar el mouse */
 }
+
+
+
+
+/* resposividad del la barra redes sociales */
+.social-media-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #2c2c2c;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+  }
+  
+  .social-media-bar p {
+    margin-bottom: 10px;
+    text-align: center;
+    word-wrap: break-word; /* Permite que el texto largo se ajuste */
+    padding: 0 10px; /* Añade padding para evitar que el texto toque los bordes */
+  }
+  
+  .social-icon {
+    width: 30px; /* Tamaño inicial de los íconos */
+    height: auto;
+    margin: 0 5px;
+    transition: transform 0.3s;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  @media (min-width: 768px) {
+    .social-media-bar {
+      flex-direction: row; /* Cambia a fila en pantallas más grandes */
+      justify-content: center;
+    }
+  
+    .social-media-bar p {
+      margin-bottom: 0;
+      margin-right: 20px; /* Espacio entre el texto y los íconos */
+    }
+  
+    .social-icon {
+      width: 40px; /* Aumenta el tamaño de los íconos en pantallas más grandes */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .social-media-bar {
+      width: 100%; /* Asegura que el contenedor use el ancho completo */
+      padding: 10px; /* Ajusta el padding según sea necesario */
+    }
+  
+    .social-media-bar p {
+      font-size: 14px; /* Ajusta el tamaño del texto si es necesario */
+    }
+  
+    .social-icon {
+      width: 30px; /* Tamaño inicial de los íconos */
+    }
+  }
